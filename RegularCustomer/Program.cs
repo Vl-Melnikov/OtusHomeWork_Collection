@@ -9,7 +9,7 @@ namespace RegularCustomer
             var shop = new Shop();
             var item = new Item();
             var customer = new Customer("Покупатель");
-            customer.Subscribe(shop);
+            customer.OnItemChanged(shop);
             int n = 0;
 
             while (true)

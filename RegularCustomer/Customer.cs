@@ -17,7 +17,7 @@ namespace RegularCustomer
             _name = name;
         }
 
-        public void Subscribe(Shop shop)
+        public void OnItemChanged(Shop shop)
         {
             _shop = shop;
             _shop.Items.CollectionChanged += Item_CollectionChanged;
