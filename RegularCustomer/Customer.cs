@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using System.Collections.ObjectModel;
 
 namespace RegularCustomer
 {
@@ -12,6 +6,7 @@ namespace RegularCustomer
     {
         private string _name;
         private Shop _shop;
+
         public Customer(string name)
         {
             _name = name;
@@ -31,6 +26,7 @@ namespace RegularCustomer
                     if (e.NewItems?[0] is Item newItem)
                         Console.WriteLine($"Добавлен: {newItem.Name} с идентификатором {newItem.Id}");
                     break;
+
                 case System.Collections.Specialized.NotifyCollectionChangedAction.Remove:
                     if (e.OldItems?[0] is Item oldItem)
                         Console.WriteLine($"Удален: {oldItem.Name} с идентификатором {oldItem.Id}");
