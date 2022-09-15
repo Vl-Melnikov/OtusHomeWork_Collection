@@ -7,7 +7,6 @@ namespace RegularCustomer
         private static void Main(string[] args)
         {
             var shop = new Shop();
-            var item = new Item();
             var customer = new Customer("Покупатель");
             customer.OnItemChanged(shop);
             int n = 0;
@@ -19,9 +18,11 @@ namespace RegularCustomer
 
                 if (action == "A")
                 {
-                    item = new Item();
-                    item.Name = $"Товар от {DateTime.Now}";
-                    item.Id = n + 1;
+                    var item = new Item
+                    {
+                        Name = $"Товар от {DateTime.Now}",
+                        Id = n + 1
+                    };
                     n++;
 
                     shop.Add(item);
